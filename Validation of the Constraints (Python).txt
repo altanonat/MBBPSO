@@ -1,0 +1,194 @@
+import numpy as np
+
+# MBBPSO Given x values
+x = np.array([6.01604003604925,	5.30913794102647,	4.49438756115461,	3.50163460129177,	2.15245955100277])
+
+# Fitness evaluation
+constraint = ((61 / x[0]**3) + (37 / x[1]**3) + (19 / x[2]**3) + \
+              (7 / x[3]**3) + (1 / x[4]**3))-1.0
+
+# Objective function evaluation
+f = 0.0624 * np.sum(x)
+
+# Output results
+print("Cantilever Beam Problem  (MBBPSO) - Objective Function f:", f)
+print("Cantilever Beam Problem  (MBBPSO) - Constraint value:", constraint)
+
+# Global Optimum Given x values
+x = np.array([6.0160159, 5.3091739,4.4943296, 3.5014750, 2.15266533])
+
+# Fitness evaluation
+constraint = ((61 / x[0]**3) + (37 / x[1]**3) + (19 / x[2]**3) + \
+              (7 / x[3]**3) + (1 / x[4]**3))-1.0
+
+# Objective function evaluation
+f = 0.0624 * np.sum(x)
+
+# Output results
+print("\nCantilever Beam Problem  (Global Optimum) - Objective Function f:", f)
+print("Cantilever Beam Problem  (Global Optimum) - Constraint value:", constraint)
+
+# Constants
+I = 100.0  # Replace with actual value for I
+P = 2.0  # Replace with actual value for P
+sigma = 2.0  # Replace with actual value for sigma
+
+# MBBPSO Given x values
+x = np.array([0.788667552858014,	0.408269735276301])
+
+# Objective function f
+f = (2 * np.sqrt(2) * x[0] + x[1]) * I
+
+# Constraints
+constraint1 = ((np.sqrt(2) * x[0] + x[1]) / (np.sqrt(2) * x[0]**2 + 2 * x[0] * x[1])) * P - sigma
+constraint2 = (x[1] / (np.sqrt(2) * x[0]**2 + 2 * x[0] * x[1])) * P - sigma
+constraint3 = (1 / (np.sqrt(2) * x[1] + x[0])) * P - sigma
+
+# Output results
+print("\nThree Bar Truss Problem  (MBBPSO) - Objective Function f:", f)
+print("Three Bar Truss Problem  (MBBPSO) - Constraint 1 value:", constraint1)
+print("Three Bar Truss Problem  (MBBPSO) - Constraint 2 value:", constraint2)
+print("Three Bar Truss Problem  (MBBPSO) - Constraint 3 value:", constraint3)
+
+# HHO Given x values
+x = np.array([0.788662816, 0.408283133832900 ])
+
+# Objective function f
+f = (2 * np.sqrt(2) * x[0] + x[1]) * I
+
+# Constraints
+constraint1 = ((np.sqrt(2) * x[0] + x[1]) / (np.sqrt(2) * x[0]**2 + 2 * x[0] * x[1])) * P - sigma
+constraint2 = (x[1] / (np.sqrt(2) * x[0]**2 + 2 * x[0] * x[1])) * P - sigma
+constraint3 = (1 / (np.sqrt(2) * x[1] + x[0])) * P - sigma
+
+# Output results
+print("\nThree Bar Truss Problem  (HHO) - Objective Function f:", f)
+print("Three Bar Truss Problem  (HHO) - Constraint 1 value:", constraint1)
+print("Three Bar Truss Problem  (HHO) - Constraint 2 value:", constraint2)
+print("Three Bar Truss Problem  (HHO) - Constraint 3 value:", constraint3)
+
+# MBBPSO Given x values (replace with actual x vector)
+x = np.array([0.812500000000000,	0.437500000000000,	42.0984455958549,	176.636595842440])  # Example x vector
+
+# Objective function evaluation
+f = (0.6224 * x[0] * x[2] * x[3]) + \
+    (1.7781 * x[1] * x[2]**2) + \
+    (3.1661 * x[0]**2 * x[3]) + \
+    (19.84 * x[0]**2 * x[2])
+
+# Constraint evaluations
+constraint1 = -x[0] + 0.0193 * x[2]  # -x1 + 0.0193 * x3
+constraint2 = -x[1] + 0.00954 * x[2]  # -x2 + 0.00954 * x3
+constraint3 = (-np.pi * x[2]**2 * x[3]) - ((4/3) * np.pi * x[2]**3) + 1296000  # Volume constraint
+constraint4 = x[3] - 240  # x4 - 240
+
+# Output results
+print("\nPressure Vessel Design Problem (MBBPSO) - Objective Function f:", f)
+print("Pressure Vessel Design Problem (MBBPSO) - Constraint 1 value:", constraint1)
+print("Pressure Vessel Design Problem (MBBPSO) - Constraint 2 value:", constraint2)
+print("Pressure Vessel Design Problem (MBBPSO) - Constraint 3 value:", constraint3)
+print("Pressure Vessel Design Problem (MBBPSO) - Constraint 4 value:", constraint4)
+
+# MBBPSO (Mixed Integer) Given x values (replace with actual x vector)
+x = np.array([0.778168651375108,	0.384649172627903,	40.3196187240989,	200.0])  # Example x vector
+
+# Objective function evaluation
+f = (0.6224 * x[0] * x[2] * x[3]) + \
+    (1.7781 * x[1] * x[2]**2) + \
+    (3.1661 * x[0]**2 * x[3]) + \
+    (19.84 * x[0]**2 * x[2])
+
+# Constraint evaluations
+constraint1 = -x[0] + 0.0193 * x[2]  # -x1 + 0.0193 * x3
+constraint2 = -x[1] + 0.00954 * x[2]  # -x2 + 0.00954 * x3
+constraint3 = (-np.pi * x[2]**2 * x[3]) - ((4/3) * np.pi * x[2]**3) + 1296000  # Volume constraint
+constraint4 = x[3] - 240  # x4 - 240
+
+# Output results
+print("\nPressure Vessel Design Problem (MBBPSO) - Mixed Integer - Objective Function f:", f)
+print("Pressure Vessel Design Problem (MBBPSO) - Mixed Integer - Constraint 1 value:", constraint1)
+print("Pressure Vessel Design Problem (MBBPSO) - Mixed Integer - Constraint 2 value:", constraint2)
+print("Pressure Vessel Design Problem (MBBPSO) - Mixed Integer - Constraint 3 value:", constraint3)
+print("Pressure Vessel Design Problem (MBBPSO) - Mixed Integer - Constraint 4 value:", constraint4)
+
+# MBBPSO Given x values (replace with actual x vector)
+x = np.array([0.8125, 0.4375,42.0984455958549, 176.6365958424394])  # Example x vector
+
+# Objective function evaluation
+f = (0.6224 * x[0] * x[2] * x[3]) + \
+    (1.7781 * x[1] * x[2]**2) + \
+    (3.1661 * x[0]**2 * x[3]) + \
+    (19.84 * x[0]**2 * x[2])
+
+# Constraint evaluations
+constraint1 = -x[0] + 0.0193 * x[2]  # -x1 + 0.0193 * x3
+constraint2 = -x[1] + 0.00954 * x[2]  # -x2 + 0.00954 * x3
+constraint3 = (-np.pi * x[2]**2 * x[3]) - ((4/3) * np.pi * x[2]**3) + 1296000  # Volume constraint
+constraint4 = x[3] - 240  # x4 - 240
+
+# Output results
+print("\nPressure Vessel Design Problem (Global Optimum) - Objective Function f:", f)
+print("Pressure Vessel Design Problem (Global Optimum) - Constraint 1 value:", constraint1)
+print("Pressure Vessel Design Problem (Global Optimum) - Constraint 2 value:", constraint2)
+print("Pressure Vessel Design Problem (Global Optimum) - Constraint 3 value:", constraint3)
+print("Pressure Vessel Design Problem (Global Optimum) - Constraint 4 value:", constraint4)
+
+# HHO Given x values (replace with actual x vector)
+x = np.array([0.81758383, 0.4072927, 42.09174576, 176.7196352 ])  # Example x vector
+
+# Objective function evaluation
+f = (0.6224 * x[0] * x[2] * x[3]) + \
+    (1.7781 * x[1] * x[2]**2) + \
+    (3.1661 * x[0]**2 * x[3]) + \
+    (19.84 * x[0]**2 * x[2])
+
+# Constraint evaluations
+constraint1 = -x[0] + 0.0193 * x[2]  # -x1 + 0.0193 * x3
+constraint2 = -x[1] + 0.00954 * x[2]  # -x2 + 0.00954 * x3
+constraint3 = (-np.pi * x[2]**2 * x[3]) - ((4/3) * np.pi * x[2]**3) + 1296000  # Volume constraint
+constraint4 = x[3] - 240  # x4 - 240
+
+# Output results
+print("\nPressure Vessel Design Problem (HHO) - Objective Function f:", f)
+print("Pressure Vessel Design Problem (HHO)  -  Constraint 1 value:", constraint1)
+print("Pressure Vessel Design Problem (HHO)  -  Constraint 2 value:", constraint2)
+print("Pressure Vessel Design Problem (HHO)  -  Constraint 3 value:", constraint3)
+print("Pressure Vessel Design Problem (HHO)  -  Constraint 4 value:", constraint4)
+
+# MBBPSO Given x values (replace with actual x vector)
+x = np.array([0.0516929524944768,	0.356811364149455,	11.2834789575458])  # Example x vector
+
+# Objective function f calculation
+f = (x[2] + 2) * x[1] * x[0]**2
+
+# Constraints checking
+constraint1 = 1 - (x[1]**3 * x[2] / (71785 * x[0]**4))
+constraint2 = ((4 * x[1]**2 - x[0] * x[1]) / (12566 * (x[1] * x[0]**3 - x[0]**4))) + (1 / (5108 * x[0]**2))-1
+constraint3 = 1 - (140.45 * x[0]) / (x[1]**2 * x[2])
+constraint4 = ((x[0] + x[1]) / 1.5)-1.0
+
+# Output results
+print("\nSpring Design Problem (MBBPSO) - Objective Function f:", f)
+print("Spring Design Problem (MBBPSO) - Constraint 1 value:", constraint1)
+print("Spring Design Problem (MBBPSO) - Constraint 2 value:", constraint2)
+print("Spring Design Problem (MBBPSO) - Constraint 3 value:", constraint3)
+print("Spring Design Problem (MBBPSO) - Constraint 4 value:", constraint4)
+
+# HHO Given x values (replace with actual x vector)
+x = np.array([0.051796393, 0.359305355, 11.138859])  # Example x vector
+
+# Objective function f calculation
+f = (x[2] + 2) * x[1] * x[0]**2
+
+# Constraints checking
+constraint1 = 1 - (x[1]**3 * x[2] / (71785 * x[0]**4))
+constraint2 = ((4 * x[1]**2 - x[0] * x[1]) / (12566 * (x[1] * x[0]**3 - x[0]**4))) + (1 / (5108 * x[0]**2))-1
+constraint3 = 1 - (140.45 * x[0]) / (x[1]**2 * x[2])
+constraint4 = ((x[0] + x[1]) / 1.5)-1.0
+
+# Output results
+print("\nSpring Design Problem (HHO) - Objective Function f:", f)
+print("Spring Design Problem (HHO) - Constraint 1 value:", constraint1)
+print("Spring Design Problem (HHO) - Constraint 2 value:", constraint2)
+print("Spring Design Problem (HHO) - Constraint 3 value:", constraint3)
+print("Spring Design Problem (HHO) - Constraint 4 value:", constraint4)
